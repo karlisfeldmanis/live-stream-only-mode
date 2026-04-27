@@ -34,6 +34,21 @@ To restore the UI, simply **reload the page**.
 
 ---
 
+## Bookmarklet (optional, one-click activation)
+
+If you'd rather not use the console every time, save this as a bookmark:
+
+- **Name:** `Stream Only`
+- **URL:** paste exactly this, including `javascript:`
+
+  ```
+  javascript:fetch('https://raw.githubusercontent.com/karlisfeldmanis/live-stream-only-mode/main/stream-only-mode.js').then(r=>r.text()).then(eval)
+  ```
+
+Then click the bookmark on any supported page. Bookmarklets do not trigger the "allow pasting" warning.
+
+---
+
 ## How it works
 
 The one-liner fetches the full script from this repository at runtime and executes it. Any updates to the script are picked up automatically.
