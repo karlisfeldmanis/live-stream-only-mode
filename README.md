@@ -6,21 +6,7 @@ Tested on: **live.onairent.com** (Evolution Gaming and similar platforms).
 
 ---
 
-## Quick Start — Bookmarklet (recommended)
-
-Create a new bookmark in your browser and paste the following as the URL:
-
-```
-javascript:fetch('https://raw.githubusercontent.com/karlisfeldmanis/live-stream-only-mode/main/stream-only-mode.js').then(r=>r.text()).then(eval)
-```
-
-Then click the bookmark on any supported page for one-click activation. Reload the page to restore the UI.
-
-This is the recommended method — it avoids the browser's self-XSS warning when pasting into the console (see below).
-
----
-
-## Alternative — paste this one-liner into the browser console
+## Quick Start — paste this one-liner into the browser console
 
 ```js
 fetch('https://raw.githubusercontent.com/karlisfeldmanis/live-stream-only-mode/main/stream-only-mode.js').then(r=>r.text()).then(eval)
@@ -45,8 +31,6 @@ fetch('https://raw.githubusercontent.com/karlisfeldmanis/live-stream-only-mode/m
 6. The "allow pasting" permission lasts for the current DevTools session. If you fully close DevTools and reopen it, you may need to type `allow pasting` again.
 
 To restore the UI, simply **reload the page**.
-
-> **Tip:** If you do this often, use the **bookmarklet** above — it never triggers this warning.
 
 ---
 
