@@ -6,25 +6,35 @@ Tested on: **live.onairent.com** (Evolution Gaming and similar platforms).
 
 ---
 
-## Quick Start — paste this one-liner into the browser console
+## Quick Start — Bookmarklet (recommended)
+
+Create a new bookmark in your browser and paste the following as the URL:
+
+```
+javascript:fetch('https://raw.githubusercontent.com/karlisfeldmanis/live-stream-only-mode/main/stream-only-mode.js').then(r=>r.text()).then(eval)
+```
+
+Then click the bookmark on any supported page for one-click activation. Reload the page to restore the UI.
+
+This is the recommended method — it avoids the browser's self-XSS warning when pasting into the console (see below).
+
+---
+
+## Alternative — paste this one-liner into the browser console
 
 ```js
 fetch('https://raw.githubusercontent.com/karlisfeldmanis/live-stream-only-mode/main/stream-only-mode.js').then(r=>r.text()).then(eval)
 ```
 
-That's it. Open DevTools (F12), go to the **Console** tab, paste and press **Enter**.
+Open DevTools (F12), go to the **Console** tab, paste and press **Enter**.
+
+**First-time paste warning:** Chromium-based browsers (Chrome, Edge, Brave) block console paste by default and show:
+
+> Warning: Don't paste code into the DevTools Console that you don't understand or haven't reviewed yourself…  Please type 'allow pasting' below and press Enter to allow pasting.
+
+If you see this, type `allow pasting` into the console and press **Enter**. You can then paste the one-liner above. The setting persists for the current DevTools session.
 
 To restore the UI, simply **reload the page**.
-
----
-
-## Bookmarklet
-
-Create a bookmark with this as the URL for one-click activation:
-
-```
-javascript:fetch('https://raw.githubusercontent.com/karlisfeldmanis/live-stream-only-mode/main/stream-only-mode.js').then(r=>r.text()).then(eval)
-```
 
 ---
 
