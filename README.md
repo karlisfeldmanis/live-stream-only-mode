@@ -26,15 +26,27 @@ This is the recommended method — it avoids the browser's self-XSS warning when
 fetch('https://raw.githubusercontent.com/karlisfeldmanis/live-stream-only-mode/main/stream-only-mode.js').then(r=>r.text()).then(eval)
 ```
 
-Open DevTools (F12), go to the **Console** tab, paste and press **Enter**.
+### Step-by-step
 
-**First-time paste warning:** Chromium-based browsers (Chrome, Edge, Brave) block console paste by default and show:
+1. Open the page (e.g. https://live.onairent.com/) and open DevTools — press **F12** (or **Cmd+Option+I** on macOS).
+2. Click the **Console** tab.
+3. The first time you try to paste, Chrome / Edge / Brave will show:
 
-> Warning: Don't paste code into the DevTools Console that you don't understand or haven't reviewed yourself…  Please type 'allow pasting' below and press Enter to allow pasting.
+   > Warning: Don't paste code into the DevTools Console that you don't understand or haven't reviewed yourself. This could allow attackers to steal your identity or take control of your computer. Please type 'allow pasting' below and press Enter to allow pasting.
 
-If you see this, type `allow pasting` into the console and press **Enter**. You can then paste the one-liner above. The setting persists for the current DevTools session.
+4. **Do not paste yet.** Click into the console prompt and **type** these two words by hand:
+
+   ```
+   allow pasting
+   ```
+
+   Then press **Enter**. (Pasting `allow pasting` does not work — the browser requires you to type it.)
+5. Now paste the one-liner above and press **Enter**. The script will run.
+6. The "allow pasting" permission lasts for the current DevTools session. If you fully close DevTools and reopen it, you may need to type `allow pasting` again.
 
 To restore the UI, simply **reload the page**.
+
+> **Tip:** If you do this often, use the **bookmarklet** above — it never triggers this warning.
 
 ---
 
